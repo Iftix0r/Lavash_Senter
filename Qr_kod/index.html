@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavash Senter - Free Wi-Fi Signage</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for premium visual badges -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Browser Controls Overlay (Hidden when printing) -->
+    <div class="control-panel no-print">
+        <div class="control-brand">
+            <i data-lucide="pocket-knife" class="brand-icon"></i>
+            <div class="brand-text">
+                <h1>Lavash Senter</h1>
+                <p>Wi-Fi QR-Kod Generator</p>
+            </div>
+        </div>
+        <div class="control-actions">
+            <button onclick="window.print()" class="btn btn-primary">
+                <i data-lucide="printer"></i> Chop etish (Print A4)
+            </button>
+            <button onclick="toggleTheme()" class="btn btn-secondary" id="theme-btn">
+                <i data-lucide="palette"></i> Rang mavzusi
+            </button>
+        </div>
+    </div>
+
+    <!-- Printable A4 Document Container -->
+    <div class="a4-document" id="printable-area">
+        <!-- Inner elegant border border -->
+        <div class="border-accent-outer">
+            <div class="border-accent-inner">
+                
+                <!-- Corner Ornaments for premium look -->
+                <div class="corner corner-tl"></div>
+                <div class="corner corner-tr"></div>
+                <div class="corner corner-bl"></div>
+                <div class="corner corner-br"></div>
+
+                <!-- Main Content Area -->
+                <div class="content-wrapper">
+                    
+                    <!-- Top Logo Emblem -->
+                    <div class="emblem-container">
+                        <div class="emblem">
+                            <i data-lucide="utensils" class="emblem-icon"></i>
+                        </div>
+                        <div class="emblem-divider"></div>
+                    </div>
+
+                    <!-- Cafe Brand Header -->
+                    <header class="brand-header">
+                        <h2 class="brand-title">LAVASH SENTER</h2>
+                        <p class="brand-subtitle">Shinam muhit va ajoyib ta'm</p>
+                    </header>
+
+                    <!-- Main Wi-Fi Badge -->
+                    <div class="wifi-badge-container">
+                        <div class="wifi-badge">
+                            <i data-lucide="wifi" class="wifi-icon"></i>
+                            <span>FREE WI-FI</span>
+                        </div>
+                    </div>
+
+                    <!-- QR Code Framing Box -->
+                    <div class="qr-showcase">
+                        <p class="instruction-text">Ulanish uchun telefoningiz kamerasi orqali skaner qiling</p>
+                        
+                        <div class="qr-frame">
+                            <div class="qr-bracket bracket-tl"></div>
+                            <div class="qr-bracket bracket-tr"></div>
+                            <div class="qr-bracket bracket-bl"></div>
+                            <div class="qr-bracket bracket-br"></div>
+                            
+                            <!-- This is where the QR Code will be injected dynamically -->
+                            <div id="qrcode" class="qrcode-canvas"></div>
+                        </div>
+
+                        <p class="instruction-sub">Tezkor va xavfsiz internet ulanishi</p>
+                    </div>
+
+                    <!-- Credential Details Card for Manual Input -->
+                    <div class="credentials-card">
+                        <div class="cred-row">
+                            <span class="cred-label">
+                                <i data-lucide="network"></i> Tarmoq (SSID):
+                            </span>
+                            <span class="cred-value select-all">LavashSentr</span>
+                        </div>
+                        <div class="cred-row">
+                            <span class="cred-label">
+                                <i data-lucide="key-round"></i> Parol (Password):
+                            </span>
+                            <span class="cred-value select-all">Lavashzakaz</span>
+                        </div>
+                    </div>
+
+                    <!-- Footer Warm Closing Message -->
+                    <footer class="flyer-footer">
+                        <p class="footer-greeting">Yoqimli ishtaha!</p>
+                        <p class="footer-sub">Bizni tanlaganingiz uchun rahmat</p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code Generator Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
